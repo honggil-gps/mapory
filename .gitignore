@@ -17,6 +17,7 @@ Desktop.ini
 build/
 **/doc/api/
 **/ios/Flutter/.last_build_id
+.flutter-plugins-dependencies
 
 # --- iOS/Xcode 추가 무시 규칙 (ios/.gitignore에서 병합) ---
 **/dgph
@@ -35,14 +36,15 @@ Icon?
 profile
 xcuserdata
 **/.generated/
-Flutter/App.framework
-Flutter/ephemeral/
-Flutter/app.flx
-Flutter/app.zip
-Flutter/flutter_assets/
-Flutter/flutter_export_environment.sh
+**/Flutter/App.framework
+**/Flutter/ephemeral/
+**/Flutter/app.flx
+**/Flutter/app.zip
+**/Flutter/flutter_assets/
+**/Flutter/flutter_export_environment.sh
+**/Flutter/Generated.xcconfig
 ServiceDefinitions.json
-Runner/GeneratedPluginRegistrant.*
+**/Runner/GeneratedPluginRegistrant.*
 
 # 예외 규칙
 !default.mode1v3
