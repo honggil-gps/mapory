@@ -9,6 +9,12 @@ Desktop.ini
 # VSCode
 .vscode/
 
+# IntelliJ/Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
 # Flutter/Dart/Pub 관련
 .dart_tool/
 .packages
