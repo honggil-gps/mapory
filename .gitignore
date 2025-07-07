@@ -1,45 +1,52 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
+# macOS
 .DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# VSCode
+.vscode/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter/Dart/Pub 관련
 .dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
+build/
+**/doc/api/
+**/ios/Flutter/.last_build_id
 
-# Symbolication related
-app.*.symbols
+# --- iOS/Xcode 추가 무시 규칙 (ios/.gitignore에서 병합) ---
+**/dgph
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+**/*sync/
+.sconsign.dblite
+.tags*
+**/.vagrant/
+**/DerivedData/
+Icon?
+**/.symlinks/
+profile
+xcuserdata
+**/.generated/
+Flutter/App.framework
+Flutter/ephemeral/
+Flutter/app.flx
+Flutter/app.zip
+Flutter/flutter_assets/
+Flutter/flutter_export_environment.sh
+ServiceDefinitions.json
+Runner/GeneratedPluginRegistrant.*
 
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# 예외 규칙
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+!default.perspectivev3
+Podfile
