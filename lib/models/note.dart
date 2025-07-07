@@ -1,0 +1,1 @@
+// Note data model definition

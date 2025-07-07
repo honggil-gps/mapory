@@ -1,0 +1,1 @@
+// Photo data model definition
