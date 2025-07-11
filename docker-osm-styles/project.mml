@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map>
+<Map background-color="#FFE5B4" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+
+  <!-- ===== STYLES ===== -->
+  
+  <!-- 기본 스타일 -->
+  <Style name="default" filter-mode="first">
+    <Rule>
+      <PolygonSymbolizer fill="#FFF8DC"/>
+    </Rule>
+  </Style>
+
+  <!-- 토지 이용 스타일 -->
+  <Style name="landuse" filter-mode="first">
+    <Rule>
+      <Filter>[landuse]</Filter>
+      <PolygonSymbolizer fill="#e8e8e8" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'park'</Filter>
+      <PolygonSymbolizer fill="#90EE90" opacity="0.7"/>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'forest'</Filter>
+      <PolygonSymbolizer fill="#228B22" opacity="0.6"/>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'residential'</Filter>
+      <PolygonSymbolizer fill="#f5f5f5" opacity="0.5"/>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'commercial'</Filter>
+      <PolygonSymbolizer fill="#FFE4B5" opacity="0.6"/>
+    </Rule>
+  </Style>
+
+  <!-- 수역 스타일 -->
+  <Style name="water" filter-mode="first">
+    <Rule>
+      <Filter>[water]</Filter>
+      <PolygonSymbolizer fill="#a8d0e6" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[water] = 'river'</Filter>
+      <PolygonSymbolizer fill="#87CEEB" opacity="0.9"/>
+    </Rule>
+    <Rule>
+      <Filter>[water] = 'lake'</Filter>
+      <PolygonSymbolizer fill="#4682B4" opacity="0.8"/>
+    </Rule>
+  </Style>
+
+  <!-- 도로 스타일 -->
+  <Style name="roads" filter-mode="first">
+    <Rule>
+      <Filter>[highway] = 'motorway'</Filter>
+      <LineSymbolizer stroke="#FF6B6B" stroke-width="4" stroke-opacity="0.9"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk'</Filter>
+      <LineSymbolizer stroke="#FF8C69" stroke-width="3" stroke-opacity="0.9"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary'</Filter>
+      <LineSymbolizer stroke="#FFA07A" stroke-width="2.5" stroke-opacity="0.9"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary'</Filter>
+      <LineSymbolizer stroke="#FFB6C1" stroke-width="2" stroke-opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <LineSymbolizer stroke="#F0E68C" stroke-width="1.5" stroke-opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential'</Filter>
+      <LineSymbolizer stroke="#ffffff" stroke-width="1" stroke-opacity="0.7"/>
+    </Rule>
+  </Style>
+
+  <!-- 건물 스타일 -->
+  <Style name="buildings" filter-mode="first">
+    <Rule>
+      <Filter>[building]</Filter>
+      <PolygonSymbolizer fill="#d3d3d3" opacity="0.7"/>
+    </Rule>
+    <Rule>
+      <Filter>[building] = 'commercial'</Filter>
+      <PolygonSymbolizer fill="#FFE4B5" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[building] = 'residential'</Filter>
+      <PolygonSymbolizer fill="#f0f0f0" opacity="0.6"/>
+    </Rule>
+    <Rule>
+      <Filter>[building] = 'school'</Filter>
+      <PolygonSymbolizer fill="#98FB98" opacity="0.7"/>
+    </Rule>
+    <Rule>
+      <Filter>[building] = 'hospital'</Filter>
+      <PolygonSymbolizer fill="#FFB6C1" opacity="0.8"/>
+    </Rule>
+  </Style>
+
+  <!-- 관심지점 스타일 -->
+  <Style name="poi" filter-mode="first">
+    <Rule>
+      <Filter>[amenity] = 'restaurant'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#FF6B6B" width="4" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'cafe'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#8B4513" width="3" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'school'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#32CD32" width="4" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'hospital'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#FF1493" width="4" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[shop] = 'supermarket'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#FFD700" width="4" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'park'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#228B22" width="3" opacity="0.8"/>
+    </Rule>
+  </Style>
+
+  <!-- 라벨 스타일 -->
+  <Style name="labels" filter-mode="first">
+    <Rule>
+      <Filter>[name]</Filter>
+      <TextSymbolizer face-name="Noto Sans CJK KR" size="10" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
+        <CssParameter name="text-transform">none</CssParameter>
+        <CssParameter name="text-wrap-width">100</CssParameter>
+        <CssParameter name="text-wrap-before">false</CssParameter>
+      </TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <TextSymbolizer face-name="Noto Sans CJK KR" size="14" fill="#000000" opacity="0.9" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8" font-feature-settings="'kern' 1">
+        <CssParameter name="text-transform">none</CssParameter>
+        <CssParameter name="text-wrap-width">100</CssParameter>
+        <CssParameter name="text-wrap-before">false</CssParameter>
+      </TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <TextSymbolizer face-name="Noto Sans CJK KR" size="12" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
+        <CssParameter name="text-transform">none</CssParameter>
+        <CssParameter name="text-wrap-width">100</CssParameter>
+        <CssParameter name="text-wrap-before">false</CssParameter>
+      </TextSymbolizer>
+    </Rule>
+  </Style>
+
+  <!-- 행정 경계 스타일 -->
+  <Style name="admin" filter-mode="first">
+    <Rule>
+      <Filter>[admin_level] = '2'</Filter>
+      <LineSymbolizer stroke="#333333" stroke-width="2" stroke-opacity="0.7"/>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level] = '4'</Filter>
+      <LineSymbolizer stroke="#666666" stroke-width="1.5" stroke-opacity="0.6"/>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level] = '6'</Filter>
+      <LineSymbolizer stroke="#666666" stroke-width="1" stroke-opacity="0.5"/>
+    </Rule>
+  </Style>
+
+  <!-- 자연 지형 스타일 -->
+  <Style name="natural" filter-mode="first">
+    <Rule>
+      <Filter>[natural] = 'wood'</Filter>
+      <PolygonSymbolizer fill="#228B22" opacity="0.5"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'water'</Filter>
+      <PolygonSymbolizer fill="#4682B4" opacity="0.7"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'beach'</Filter>
+      <PolygonSymbolizer fill="#F4A460" opacity="0.8"/>
+    </Rule>
+  </Style>
+
+  <!-- 교통 스타일 -->
+  <Style name="transport" filter-mode="first">
+    <Rule>
+      <Filter>[railway] = 'station'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#FF4500" width="4" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'subway_entrance'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#9932CC" width="3" opacity="0.8"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'bus_stop'</Filter>
+      <MarkersSymbolizer marker-type="ellipse" fill="#32CD32" width="2" opacity="0.8"/>
+    </Rule>
+  </Style>
+
+  <!-- ===== LAYERS ===== -->
+
+  <!-- 배경 레이어 -->
+  <Layer name="background" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>default</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way FROM planet_osm_polygon WHERE landuse IS NULL AND building IS NULL AND water IS NULL AND natural IS NULL LIMIT 1) as background</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 수역 레이어 -->
+  <Layer name="water" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>water</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, water FROM planet_osm_polygon WHERE water IS NOT NULL) as water</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 토지 이용 레이어 -->
+  <Layer name="landuse" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>landuse</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, landuse FROM planet_osm_polygon WHERE landuse IS NOT NULL) as landuse</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 자연 지형 레이어 -->
+  <Layer name="natural" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>natural</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, natural FROM planet_osm_polygon WHERE natural IS NOT NULL) as natural</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 도로 레이어 -->
+  <Layer name="roads" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>roads</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, highway FROM planet_osm_line WHERE highway IS NOT NULL) as roads</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 건물 레이어 -->
+  <Layer name="buildings" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>buildings</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, building FROM planet_osm_polygon WHERE building IS NOT NULL) as buildings</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 관심지점 레이어 -->
+  <Layer name="poi" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>poi</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, amenity, shop, leisure FROM planet_osm_point WHERE amenity IS NOT NULL OR shop IS NOT NULL OR leisure IS NOT NULL) as poi</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 교통 레이어 -->
+  <Layer name="transport" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>transport</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, railway, highway FROM planet_osm_point WHERE railway IS NOT NULL OR highway = 'bus_stop') as transport</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 행정 경계 레이어 -->
+  <Layer name="admin" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>admin</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, admin_level FROM planet_osm_line WHERE admin_level IS NOT NULL) as admin</Parameter>
+    </Datasource>
+  </Layer>
+
+  <!-- 라벨 레이어 -->
+  <Layer name="labels" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>labels</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">gis</Parameter>
+      <Parameter name="table">(SELECT way, name, place FROM planet_osm_point WHERE name IS NOT NULL) as labels</Parameter>
+    </Datasource>
+  </Layer>
+
+</Map> 
