@@ -157,7 +157,7 @@ Map {
 /* ===== LABELS (라벨) ===== */
 #labels {
   text-name: "[name]";
-  text-face-name: "Noto Sans CJK KR";
+  text-face-name: "Noto Sans CJK KR, Noto Sans, sans-serif";
   text-size: 10;
   text-fill: #333333;
   text-opacity: 0.8;
@@ -170,17 +170,20 @@ Map {
   text-size: 14;
   text-fill: #000000;
   text-weight: bold;
+  text-face-name: "Noto Sans CJK KR Bold, Noto Sans Bold, sans-serif";
 }
 
 #labels[place="town"] {
   text-size: 12;
   text-fill: #333333;
   text-weight: bold;
+  text-face-name: "Noto Sans CJK KR Bold, Noto Sans Bold, sans-serif";
 }
 
 #labels[place="village"] {
   text-size: 10;
   text-fill: #666666;
+  text-face-name: "Noto Sans CJK KR, Noto Sans, sans-serif";
 }
 
 /* ===== ADMINISTRATIVE BOUNDARIES (행정 경계) ===== */

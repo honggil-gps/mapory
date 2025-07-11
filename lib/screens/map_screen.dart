@@ -152,7 +152,7 @@ class _MapScreenState extends State<MapScreen> {
             mapController: _mapController,
             options: MapOptions(
               initialCenter: _currentLocation ?? _defaultLocation,
-              initialZoom: 13.0,
+              initialZoom: 13.0, // 초기 줌 레벨 (소수점 가능)
               onTap: (tapPosition, point) {
                 // 지도 탭 시 처리
                 _logger.i('Tapped at: ${point.latitude}, ${point.longitude}');
@@ -164,7 +164,7 @@ class _MapScreenState extends State<MapScreen> {
                 urlTemplate:
                     'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.mapory',
-                maxZoom: 19,
+                maxZoom: 19, // 최대 줌 레벨
               ),
               // 마커 레이어
               MarkerLayer(

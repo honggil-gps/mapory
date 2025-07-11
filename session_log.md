@@ -82,12 +82,17 @@
 - ✅ **Mapnik XML 설정 파일 작성** (`project.mml`)
   - PostgreSQL + PostGIS 데이터베이스 연결 설정
   - 각 레이어별 스타일 및 데이터소스 정의
-  - 한글 폰트 (Noto Sans CJK KR) 설정
+  - Noto Sans CJK KR 폰트 설정 (폴백 포함)
 
 - ✅ **README.md 문서 작성**
   - 오리 테마 색상 설명
   - 사용법 및 커스터마이징 가이드
   - 문제 해결 방법
+
+- ✅ **폰트 설정 완료**
+  - Noto Sans CJK KR 폰트 통일 (Apache License 2.0)
+  - 폰트 폴백 전략 구현
+  - Docker 컨테이너 설치 가이드 작성
 
 ### 2. 오리 테마 브랜드 정체성 확립
 - ✅ **색상 팔레트 정의**

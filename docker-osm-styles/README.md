@@ -35,4 +35,9 @@ docker-osm-styles/
 - **🟢 공원/학교**: 청둥오리 그린 (#A8D8A8) - 자연스럽고 평화로운 느낌
 - **🟡 건물/도시**: 기본 오리 크림 (#FFF8DC) - 중성적이고 깔끔한 느낌
 
+### 📝 **폰트 설정**
+- **폰트**: Noto Sans CJK KR (Google Fonts, Apache License 2.0)
+- **특징**: 한국어 완벽 지원, 모바일 최적화, 저작권 문제 없음
+- **폴백**: Noto Sans CJK KR → Noto Sans → sans-serif
+
 이제 Windows에서 Docker OSM 서버를 켤 때 이 오리 테마 스타일을 적용하면, Mapory 앱에 완벽하게 어울리는 귀여운 오리 테마 지도를 볼 수 있습니다! 🦆🗺️

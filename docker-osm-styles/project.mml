@@ -135,7 +135,7 @@
   <Style name="labels" filter-mode="first">
     <Rule>
       <Filter>[name]</Filter>
-      <TextSymbolizer face-name="Noto Sans CJK KR" size="10" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
+      <TextSymbolizer face-name="Noto Sans CJK KR, Noto Sans, sans-serif" size="10" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
         <CssParameter name="text-transform">none</CssParameter>
         <CssParameter name="text-wrap-width">100</CssParameter>
         <CssParameter name="text-wrap-before">false</CssParameter>
@@ -143,7 +143,7 @@
     </Rule>
     <Rule>
       <Filter>[place] = 'city'</Filter>
-      <TextSymbolizer face-name="Noto Sans CJK KR" size="14" fill="#000000" opacity="0.9" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8" font-feature-settings="'kern' 1">
+      <TextSymbolizer face-name="Noto Sans CJK KR Bold, Noto Sans Bold, sans-serif" size="14" fill="#000000" opacity="0.9" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8" font-feature-settings="'kern' 1">
         <CssParameter name="text-transform">none</CssParameter>
         <CssParameter name="text-wrap-width">100</CssParameter>
         <CssParameter name="text-wrap-before">false</CssParameter>
@@ -151,7 +151,7 @@
     </Rule>
     <Rule>
       <Filter>[place] = 'town'</Filter>
-      <TextSymbolizer face-name="Noto Sans CJK KR" size="12" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
+      <TextSymbolizer face-name="Noto Sans CJK KR Bold, Noto Sans Bold, sans-serif" size="12" fill="#333333" opacity="0.8" halo-radius="1" halo-fill="#ffffff" halo-opacity="0.8">
         <CssParameter name="text-transform">none</CssParameter>
         <CssParameter name="text-wrap-width">100</CssParameter>
         <CssParameter name="text-wrap-before">false</CssParameter>
